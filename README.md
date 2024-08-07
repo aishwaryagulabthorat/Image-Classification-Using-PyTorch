@@ -20,11 +20,12 @@ o	Pre-trained Weights: The model uses pre-trained weights from efficientnet_b0_r
 o	Classifier: 
 
 Custom Model:
+
 •	Feature Layers: In the custom model SimpleCardClassifer, the self.features attribute contains the convolutional layers of EfficientNet-B0 (excluding the final classification layer). This segment of the model performs the core convolutional operations. Here we basically remove the last layer of final classification, because we need to do that classification on our data. This step will just extract features from the pre-trained model EfficientNet-B0.
 
 •	Final Classifier: After feature extraction, the flattened output is passed to a fully connected layer (the classifier), which outputs the final class predictions.
 
-3.	Training and Validation:
+**3.	Training and Validation:**
 o	Loss Function: CrossEntropyLoss, commonly used for classification tasks.
 
 o	Optimizer: Adam optimizer with a learning rate of 0.001, chosen for its efficiency in handling sparse gradients.
@@ -33,6 +34,6 @@ o	Training Loop: Iterates through the dataset for a specified number of epochs, 
 
 o	Validation Loop: Evaluates the model on the validation dataset to monitor performance and prevent overfitting.
 
-4.	Evaluation:
+**4.	Evaluation:**
 o	Loss Tracking: Both training and validation losses are tracked and plotted to visualize the model's performance over epochs.
 
